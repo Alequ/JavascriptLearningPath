@@ -1,4 +1,4 @@
-# JavascriptLearningPath
+# Javascript Learning Path
 
 ## Chapter 1 Javascript basics
   ### 1. Strings,Numbers,Booleans

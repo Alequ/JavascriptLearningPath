@@ -1,0 +1,44 @@
+##  Chapter 1 Javascript basics
+
+  ### 1. Strings,Numbers,Booleans
+      var foo = 42 //Numbers
+      var foo = 'bar' //Strings
+      var foo = true //Booleans
+
+  ###  2. Comments
+      Single line comment using //
+      Multiple line comments using /*..... */
+
+  ###  3. Declaring variables
+      var foo = 22
+
+  ###  4. Semicolons
+      Statements and declarations must be terminated with a semicolon;
+
+  ###  5. Functions
+      A function is a subprogram that can be called by code external or internal in case of recursion to the function.Like the program itself a function is composed of a sequence of statements called the function body.Values can be passed to a function, and the function will return a value.
+      In Javascript, functions are first-class objects, becouse they can have properties and methods just like any other object.
+
+      function name(param1,param2...){
+      statements
+      }
+      name = the function name
+      param = The name of an argument passed to the function, can have up o 255 arguments
+      statements = the statements comprising the body of function.
+
+      function presentation(name,age){
+      console.log("Your name is ${name} and you're ${age} years old")
+      }
+      presentation("Alex", 26) // Your name is Alex and you're 26 years old
+      presentation("Cristina",25) // your name is Cristina and you're 25 years old.
+
+    6.Arrow Functions
+    7.Scope and Closures
+    10.Introduction to Objects
+    11.Introduction to Arrays
+    12.If/else statements
+    13.And,or, and not operators
+    14.Null and undefined
+    15.For loops
+    16.Debugging errors
+    17.Callbacks
