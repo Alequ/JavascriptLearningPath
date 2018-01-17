@@ -1,23 +1,23 @@
 # JavascriptLearningPath
 
-Chapter 1 Javascript basics
-  1.Strings,Numbers,Booleans
-  2.Comments
-  3.Declaring variables
-  4.Semicolons
-  5.Functions
-  6.Arrow Functions
-  7.Scope and Closures
-  10.Introduction to Objects
-  11.Introduction to Arrays
-  12.If/else statements
-  13.And,or, and not operators
-  14.Null and undefined
-  15.For loops
-  16.Debugging errors
-  17.Callbacks
+##Chapter 1 Javascript basics
+  ###1. Strings,Numbers,Booleans
+  ###2. Comments
+  ###3. Declaring variables
+  ###4. Semicolons
+  ###5. Functions
+  ###6. Arrow Functions
+  ###7. Scope and Closures
+  ###10. Introduction to Objects
+  ###11. Introduction to Arrays
+  ###12. If/else statements
+  ###13. And,or, and not operators
+  ###14. Null and undefined
+  ###15. For loops
+  ###16. Debugging errors
+  ###17. Callbacks
 
-Chapter 2 DOM basics
+##Chapter 2 DOM basics
   1.BOM and DOM
   2.Selecting an element
   3.Changing CSS with Javascript
