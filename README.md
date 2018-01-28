@@ -63,7 +63,7 @@
 ## Chapter 6 Functional Programming
   ### 1. What is functional Programming
   ### 2. High-order-Functions
-  ### 3. Preventing obects from mutating
+  ### 3. Preventing objects from mutating
   ### 4. Preventing arrays from mutating
   ### 5. Declarative vs imperative programming
   ### 6. Composing Functions
@@ -87,7 +87,7 @@
   ### 13. OOP Best practices
 
 ## Chapter 8 Text, Content and Forms
-  ### 1.Getting and seting html and Text
+  ### 1.Getting and setting html and Text
   ### 2.Creating, adding and removing Elements
   ### 3.Form events and methods
   ### 4.Build a tooltip

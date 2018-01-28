@@ -1,0 +1,250 @@
+##  Chapter 1 Javascript basics
+
+  ### 1. Strings,Numbers,Booleans
+      var foo = 42 //Numbers
+      var foo = 'bar' //Strings
+      var foo = true //Booleans
+
+  ###  2. Comments
+      Single line comment using //
+      Multiple line comments using /*..... */
+
+  ###  3. Declaring variables
+      var foo = 22
+
+  ###  4. Semicolons
+      Statements and declarations must be terminated with a semicolon;
+
+  ###  5. Functions
+      A function is a subprogram that can be called by code external or internal in case of recursion to the function.Like the program itself a function is composed of a sequence of statements called the function body.Values can be passed to a function, and the function will return a value.
+      In Javascript, functions are first-class objects, becouse they can have properties and methods just like any other object.
+
+      function name(param1,param2...){
+      statements
+      }
+      name = the function name
+      param = The name of an argument passed to the function, can have up o 255 arguments
+      statements = the statements comprising the body of function.
+
+      function presentation(name,age){
+      console.log("Your name is ${name} and you're ${age} years old")
+      }
+      presentation("Alex", 26) // Your name is Alex and you're 26 years old
+      presentation("Cristina",25) // your name is Cristina and you're 25 years old.
+
+    6.Arrow Functions
+      An arrow function expression has a shorter syntax than a function expression and does not have it's own this,arguments, super, or new target. These function expression are best suited for non-method function, and they cannot be used as constructors.
+
+      Two factors influenced the introduction of arrow functions: shorter functions and non-binding of this( to be added )
+
+      (param1,param2, ...) => { statements }
+      (param1, param2 ) => expression
+
+      //Paranthese are oprional when there's only one parameter name:
+      singleParam => { statements }
+
+      //when there are no parameters should be written with a pair of parantheses
+      () => { statements }
+
+    7.Scope and Closures
+      #Scope
+        A scope in Javascript defines what variables you have acces to. There are two kinds of scope - global scope and local scope.
+
+        #Global scope
+         If a variable is declared outside all functions or curly braces {}, it's said to be defined in the global scope.
+
+         const globalVariable = "some value"
+
+         Once you've declared a global variable, you can use that variable anywhere in your code, even in functions.
+
+         const hello = "Hello world"
+         function sayHello(){
+         console.log(hello)
+         }
+         console.log(hello) //Hello world
+         sayHello() // Hello world
+
+         Altough you can declare variables in the global scope, it is advised not to, This is becouse there is a chance of naming collision, where two or more variables are named the sam. If you declared your variables with const or let, you will recive an error whenever a collision happens, and if you declare your variales with var your second variable overwrites the first one. So you should decare always local variables not global.
+
+         #Local Scope
+          Variables that are usable only in a specific part of your code are considered to be in a local scope. These variable are also called local variables.
+
+          In JS, there are two kinds of local scope: function scope and block scope.
+
+            #Function scope
+
+            When you declare a variable in a function, you can acces this variable only within the function, You can't get this variable once you get out of it
+
+            In the example below, the variable hello is in the sayHello scope:
+
+            function sayHello() {
+            const hello ="Hello World"
+            console.log(hello)
+            }
+            sayHello() // Hello World
+            console.log(hello) // Error, hello is not defined
+
+            #Block scope
+
+            When you declare a variable with const or let withi a curly brace {}, you can acces this variable only within that curly brace.
+
+            {
+            const hello= "Hello world"
+            console.log(hello) // Hello world
+            }
+            console.log(hello) // Error
+
+          #Funcion hoisting and scopes
+
+          Functions, when declared with a function declaration, are always hoisted on the top of the current scope, So these two are equivalent:
+
+          //Same as below
+
+          sayHello()
+          function sayHello() {
+          consolle.log("hello world")
+          }
+
+          // same as above
+
+          function sayHello() {
+          consolle.log("hello world")
+          }
+          sayHello()
+
+          When declared with a function expression, functions are not hoisted to the top of the current scope.
+
+          sayHello() //error
+          const sayHello = function () {
+          console.log(aFunction)
+          }
+
+          #Function do not have access to each other's scope
+
+          Functions do not have acces to each other's scope when you define them separately, even tough one function may be used in another.
+
+        #Nested scopes
+
+        When a function is defined in another function the inner function has acces to the outer function variables. This behavior is called lexical scoping.
+
+        However, the outer function does not have acces to the inner function variables.
+
+        function outerFunction() {
+        const outer = "I'm the outer function!"
+
+        function innerFunction () {
+        const inner = "I'm the inner function!"
+        console.log(outer) //Im the outer function!
+        }
+        console.log(inner) // error
+      }
+
+        #Closures
+
+        Whenever you create a function within another function, you have created a closure. The inner function is the closure. The closure is usualy returned so you can use the outer function's variable at a later time
+
+    10.Introduction to Objects
+
+      Javascript is designed on a simple object-base paradigm.An objects is a collection of properties, and a property is an association betwen a name (or key) and a value. A property value can be a function in wich case the property is known as method. In addition to objects that are predifined in the browser, you can define your own objects.
+
+      Objects in Javascript just as in many other programing languages can be compared to obects in real life, the concept can be understood with real life examples. A car for example, has properties like color weight, wheels etc. In JS we can declare a new object and get his propertys as follows:
+
+      var myCar = new Object()
+      myCar.make = "Audi"
+      myCar.model = "A8"
+      myCar.year = "2017"
+
+      properties of JS object can also be accesed using bracket notation
+
+      myCa["model"] = "Audi"
+
+      we can have objects inside objects aswell:
+
+      var myCar = {
+      color:"red",
+      wheels: 4,
+        engine: {
+          cylinders: 4,
+          size:2.2
+        }
+      }
+
+      We can create objects easy with constructor function:
+
+      Function Car(make, model, year){
+      this.make = make;
+      this.model = model;
+      this.year = year;
+      }
+
+      var myCar = new Car("VW", "Golf", 2010)
+      myCar.model // Golf
+
+
+    11.Introduction to Arrays
+
+      Array object is a global object that is used in the construction of arrays; wich are high-level, list-like objects. An array is a special object, that has acces to special properties like length
+
+      var fruits = ["Apple", "Banana"];
+
+      console.log(fruits.length) // 2
+      var first = fruits[0] // apple
+      var last = fruits[fruits.length-1] // Banana
+
+      Add to the end of arrays
+
+      fruits.push("Orange") // apple, banana, Orange
+
+
+
+    12.If/else statements
+
+      if(condition) {
+       // Code to run when the condition is true
+      } else {
+       // Code to run when the condition is false
+      }
+
+
+    13.And,or, and not operators
+
+      And operator (&&)
+
+      if ((number >= 0) && (number <= 100)) {
+          console.log(`${number} is between 0 and 100, both included`);
+      }
+
+
+       Or operator(||)
+
+       if ((number < 0) || (number > 100)) {
+          console.log(`${number} is not in between 0 and 100`);
+        }
+
+        Not operator(!)
+
+        if (!(number > 100)) {
+            console.log(`${number} is less than or equal to 100`);
+          }
+
+
+          14.Null and undefined
+
+            null is an assigned value. It means nothing.
+            undefined means a variable has been declared, but not defined yet.
+            null is an object, undefined of type of undefines
+
+
+          15.For loops
+
+          Loops are used to repeat a series of statements, each repetition it's called iteration.
+
+          for(i = 1; i<=5; i++){
+          console.log(i) // 1,2,3,4,5
+          }
+
+
+          16.Debugging errors
+
+
+          17.Callbacks

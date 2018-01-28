@@ -35,7 +35,7 @@
 */
 
     //Minimum of two Numbers
-
+/*
     function min(x, y){
       if(x < y){
         return x
@@ -46,6 +46,19 @@
     console.log(min(4.5, 5)); // Must show 4.5
     console.log(min(19, 9));  // Must show 9
     console.log(min(1, 1));   // Must show 1
+
+    */
+
+  function prepareCake(flavor) {
+    debugger
+      return function(){
+      setTimeout(_ => console.log(`Made a ${flavor} cake`),1000 );
+    }
+  }
+  const makeCakeLater = prepareCake('Banana')
+
+  makeCakeLater();
+
   </script>
 </body>
 </html>
